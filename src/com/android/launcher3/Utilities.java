@@ -142,6 +142,8 @@ public final class Utilities {
 
     private static final long WAIT_BEFORE_RESTART = 250;
 
+    public static final String SHOW_LEFT_TAB_PREFERENCE_KEY = "pref_left_tab";
+
     /**
      * Indicates if the device has a debug build. Should only be used to store additional info or
      * add extra logging and not for changing the app behavior.
@@ -174,6 +176,11 @@ public final class Utilities {
         ResolveInfo ri = context.getPackageManager().resolveActivity(
                 PackageManagerHelper.getStyleWallpapersIntent(context), 0);
         return ri != null;
+    }
+
+
+    public static boolean isShowLeftTab(Context context) {
+        return getPrefs(context).getBoolean(SHOW_LEFT_TAB_PREFERENCE_KEY, false);
     }
 
     /**
