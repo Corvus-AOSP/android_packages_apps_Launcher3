@@ -171,6 +171,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 Utilities.restart(this);
         } else if (Utilities.KEY_DRAWER_SEARCHBAR.equals(key)) {
                 Utilities.restart(this);
+        } else if (Utilities.DESKTOP_SHOW_QUICKSPACE.equals(key)) {
+                Utilities.restart(this);
         }
     }
 

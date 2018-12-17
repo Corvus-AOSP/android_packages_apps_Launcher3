@@ -86,6 +86,13 @@
         android:defaultValue="true" />
 
     <SwitchPreference
+        android:key="pref_show_quickspace"
+        android:title="@string/show_quickspace_title"
+        android:summary="@string/show_quickspace_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
+    <SwitchPreference
         android:key="pref_dock_theme"
         android:title="@string/dock_theme_title"
         android:summary="@string/dock_theme_summary"
