@@ -173,6 +173,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 Utilities.restart(this);
         } else if (Utilities.DESKTOP_SHOW_QUICKSPACE.equals(key)) {
                 Utilities.restart(this);
+        } else if (Utilities.KEY_SHOW_QUICKSPACE_PSONALITY.equals(key)) {
+                Utilities.restart(this);
         }
     }
 
