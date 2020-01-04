@@ -162,6 +162,7 @@ public final class Utilities {
     public static final String EXTRA_WALLPAPER_OFFSET = "com.android.launcher3.WALLPAPER_OFFSET";
     public static final String EXTRA_WALLPAPER_FLAVOR = "com.android.launcher3.WALLPAPER_FLAVOR";
 
+    public static final String KEY_DOCK_SEARCH = "pref_dock_search";
     public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
 
     public static boolean IS_RUNNING_IN_TEST_HARNESS =
@@ -726,6 +727,19 @@ public final class Utilities {
             return false;
         }
         return prefs.getBoolean(KEY_SHOW_SEARCHBAR, true);
+    }
+
+     public static boolean showDQSB(Context context, Launcher launcher) {
+        LauncherAppState appState = LauncherAppState.getInstance(launcher);
+        if (!appState.isSearchAppAvailable()) {
+            return false;
+        }
+        return isQSBEnabled(context);
+    }
+
+    public static boolean isQSBEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_DOCK_SEARCH, true);
     }
 
     public static boolean isNotificationGestureEnabled(Context context) {

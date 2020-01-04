@@ -66,4 +66,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- Scrim alpha in apps drawer -->
     <string name="all_apps_background_opacity_title">Drawer Background opacity</string>
+
+    <!-- Show dock search widget -->
+    <string name="dock_search_title">Dock search bar</string>
+    <string name="dock_search_summary">Show search bar in the bottom dock</string>
 </resources>

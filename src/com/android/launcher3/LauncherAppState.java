@@ -89,7 +89,7 @@ public class LauncherAppState {
         this(context, LauncherFiles.APP_ICONS_DB);
 
         mModelChangeReceiver = new SimpleBroadcastReceiver(mModel::onBroadcastIntent);
-        setSearchAppAvailable(Utils.isPackageInstalled(context, Utilities.SEARCH_PACKAGE));
+        setSearchAppAvailable(Utils.isPackageInstalled(context, Utilities.SEARCH_PACKAGE, true));
 
         mContext.getSystemService(LauncherApps.class).registerCallback(mModel);
         mModelChangeReceiver.register(mContext, Intent.ACTION_LOCALE_CHANGED,
