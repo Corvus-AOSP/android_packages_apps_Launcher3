@@ -181,4 +181,6 @@
     <!-- Name of the class used to generate colors from the wallpaper colors. Must be implementing the LauncherAppWidgetHostView.ColorGenerator interface. -->
     <string name="color_generator_class" translatable="false"/>
 
+    <!-- Icon pack -->
+    <string name="icon_pack_settings_class" translatable="false">com.android.launcher3.lineage.icon.IconPackSettingsFragment</string>
 </resources>

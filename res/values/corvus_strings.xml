@@ -110,4 +110,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <!-- Simple at-a-glance -->
     <string name="show_google_glance_title">Simple glance mode</string>
     <string name="show_google_glance_summary">Emulates the look of At-A-glance from pixel launcher</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Icon pack</string>
+    <string name="icon_pack_default_label">Default</string>
+    <string name="icon_pack_add">Install more</string>
+    <string name="icon_pack_no_market">There\'s no available app store</string>
 </resources>
