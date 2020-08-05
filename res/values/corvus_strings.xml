@@ -51,4 +51,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <!-- Google feed -->
     <string name="left_tab_label">Google feed tab</string>
     <string name="left_tab_description">Toggle Google feed intergration, Google search app is required</string>
+
+    <!-- Icon pack -->
+    <string name="icon_pack_title">Icon pack</string>
+    <string name="icon_pack_default_label">Default</string>
+    <string name="icon_pack_add">Install more</string>
+    <string name="icon_pack_no_market">There\'s no available app store</string>
 </resources>
