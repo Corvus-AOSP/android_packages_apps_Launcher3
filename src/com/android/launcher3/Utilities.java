@@ -132,6 +132,7 @@ public final class Utilities {
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.O;
 
     public static final String ICON_SIZE = "pref_custom_icon_size";
+    public static final String KEY_ALL_APPS_BACKGROUND_ALPHA = "pref_all_apps_scrim_alpha";
 
     /**
      * Set on a motion event dispatched from the nav bar. See {@link MotionEvent#setEdgeFlags(int)}.
@@ -796,5 +797,10 @@ public final class Utilities {
         } else {
             successRunnable.run();
         }
+    }
+
+    public static int getAllAppsScrimAlpha(Context context) {
+    SharedPreferences prefs = getPrefs(context.getApplicationContext());
+    return prefs.getInt(KEY_ALL_APPS_BACKGROUND_ALPHA, 100);
     }
 }

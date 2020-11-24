@@ -319,6 +319,17 @@ public class SettingsActivity extends FragmentActivity
                         });
                         return true;
                     });
+
+                case Utilities.KEY_ALL_APPS_BACKGROUND_ALPHA:
+                    CustomSeekBarPreference allAppsAlpha = 
+                            (CustomSeekBarPreference) findPreference(Utilities.KEY_ALL_APPS_BACKGROUND_ALPHA);
+                    allAppsAlpha.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                        public boolean onPreferenceChange(Preference preference, Object newValue) {
+                            LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+                            return true;
+                        }
+                    });
+                    return true;
             }
 
             return true;
