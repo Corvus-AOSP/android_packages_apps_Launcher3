@@ -97,12 +97,6 @@
 </PreferenceCategory>
 
     <SwitchPreference
-        android:key="pref_grid_options"
-        android:title="Enable grid options"
-        android:defaultValue="false"
-        android:persistent="true" />
-
-    <SwitchPreference
         android:key="pref_left_tab"
         android:title="@string/left_tab_label"
         android:summary="@string/left_tab_description"
