@@ -56,7 +56,7 @@ public class CorvusIconFactory  extends BaseIconFactory  {
         mIconPackStore = new IconPackStore(context);
     }
 
-    public WaveIconFactory(Context context, int fillResIconDpi, int iconBitmapSize,
+    public CorvusIconFactory(Context context, int fillResIconDpi, int iconBitmapSize,
             boolean shapeDetection) {
         super(context, fillResIconDpi, iconBitmapSize, shapeDetection);
         mIconPackStore = new IconPackStore(context);
