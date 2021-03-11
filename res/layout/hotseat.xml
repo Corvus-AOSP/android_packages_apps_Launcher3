@@ -21,5 +21,4 @@
     android:layout_height="match_parent"
     android:theme="@style/HomeScreenElementTheme"
     android:importantForAccessibility="no"
-    android:background="@drawable/bkg_appseat"
     launcher:containerType="hotseat" />
