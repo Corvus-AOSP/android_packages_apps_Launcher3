@@ -288,7 +288,6 @@ public class SettingsActivity extends FragmentActivity
                     // Show if plugins are enabled or flag UI is enabled.
                     return FeatureFlags.showFlagTogglerUi(getContext()) ||
                             PluginManagerWrapper.hasPlugins(getContext());
-
                 case KEY_ENABLE_MINUS_ONE:
                     mShowGoogleAppPref = preference;
                     updateIsGoogleAppEnabled();
@@ -300,8 +299,11 @@ public class SettingsActivity extends FragmentActivity
 
                 case KEY_TRUST_APPS:
                     preference.setOnPreferenceClickListener(p -> {
-                        Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
-                        startActivity(intent);
+			 Utilities.showLockScreen(getActivity(),
+                                getString(R.string.trust_apps_manager_name), () -> {
+                            Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
+                            startActivity(intent);
+                        });
                         return true;
                     });
             }
