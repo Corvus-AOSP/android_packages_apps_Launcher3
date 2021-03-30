@@ -227,19 +227,19 @@ public class DeviceProfile {
         updateAvailableDimensions(res);
 
         // Now that we have all of the variables calculated, we can tune certain sizes.
-        /*if (!isVerticalBarLayout() && isPhone && isTallDevice) {
+        if (!isVerticalBarLayout() && isPhone && isTallDevice) {
             // We increase the hotseat size when there is extra space.
             // ie. For a display with a large aspect ratio, we can keep the icons on the workspace
             // in portrait mode closer together by adding more height to the hotseat.
             // Note: This calculation was created after noticing a pattern in the design spec.
             int extraSpace = getCellSize().y - iconSizePx - iconDrawablePaddingPx * 2
                     - workspacePageIndicatorHeight;
-//            hotseatBarSizePx += extraSpace;
-//            hotseatBarBottomPaddingPx += extraSpace;
+            hotseatBarSizePx += extraSpace;
+            hotseatBarBottomPaddingPx += extraSpace;
 
             // Recalculate the available dimensions using the new hotseat size.
             updateAvailableDimensions(res);
-        }*/
+        }
         updateWorkspacePadding();
 
         // This is done last, after iconSizePx is calculated above.
