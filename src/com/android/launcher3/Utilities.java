@@ -746,11 +746,6 @@ public final class Utilities {
         });
     }
 
-    public static boolean hasSecureKeyguard(Context context) {
-        final KeyguardManager keyguardManager = context.getSystemService(KeyguardManager.class);
-        return keyguardManager != null && keyguardManager.isKeyguardSecure();
-    }
-
     /**
      * Shows authentication screen to confirm credentials (pin, pattern or password) for the current
      * user of the device.

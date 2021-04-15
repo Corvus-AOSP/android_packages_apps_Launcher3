@@ -38,11 +38,9 @@ import java.util.List;
 class TrustAppsAdapter extends RecyclerView.Adapter<TrustAppsAdapter.ViewHolder> {
     private List<TrustComponent> mList = new ArrayList<>();
     private Listener mListener;
-    private boolean mHasSecureKeyguard;
 
-    TrustAppsAdapter(Listener listener, boolean hasSecureKeyguard) {
+    TrustAppsAdapter(Listener listener) {
         mListener = listener;
-        mHasSecureKeyguard = hasSecureKeyguard;
     }
 
     public void update(List<TrustComponent> list) {
@@ -60,7 +58,7 @@ class TrustAppsAdapter extends RecyclerView.Adapter<TrustAppsAdapter.ViewHolder>
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.bind(mList.get(i), mHasSecureKeyguard);
+        viewHolder.bind(mList.get(i));
     }
 
     @Override
@@ -86,14 +84,12 @@ class TrustAppsAdapter extends RecyclerView.Adapter<TrustAppsAdapter.ViewHolder>
             mHiddenItemView = itemView.findViewById(R.id.item_hidden_app_switch);
         }
 
-        void bind(TrustComponent component, boolean hasSecureKeyguard) {
+        void bind(TrustComponent component) {
             mIconView.setImageDrawable(component.getIcon());
             mLabelView.setText(component.getLabel());
 
             mHiddenItemView.setImageResource(component.isHidden() ?
                     R.drawable.ic_hidden_locked : R.drawable.ic_hidden_unlocked);
-
-            mProtectedView.setVisibility(hasSecureKeyguard ? View.VISIBLE : View.GONE);
 
             mHiddenView.setOnClickListener(v -> {
                 component.invertVisibility();
