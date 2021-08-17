@@ -55,9 +55,10 @@ import android.animation.LayoutTransition.TransitionListener;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningTaskInfo;
+import android.app.ActivityManagerNative;
 import android.app.IActivityManager;
+import android.content.pm.PackageManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -1604,13 +1605,13 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
 
     @SuppressWarnings("unused")
     private void killTask(View view) {
-        IActivityManager am = ActivityManager.getService();
+        IActivityManager am = ActivityManagerNative.getDefault();
         TaskView tv = getNextPageTaskView();
         Task task = tv.getTask();
         String pkgname = task.key.getPackageName();
         if (task != null) {
             try {
-                am.killBackgroundProcesses(pkgname, UserHandle.USER_CURRENT);
+                am.forceStopPackage(pkgname, UserHandle.USER_CURRENT);
             } catch (Throwable t) {
                 //TODO: handle exception
             }
