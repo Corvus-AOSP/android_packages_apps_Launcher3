@@ -186,6 +186,10 @@ public final class Utilities {
     public static boolean isShowLeftTab(Context context) {
         return getPrefs(context).getBoolean(SHOW_LEFT_TAB_PREFERENCE_KEY, false);
     }
+    
+    public static boolean recentsShowMemory(Context context) {
+         return getPrefs(context).getBoolean("pref_recents_show_memory", true);
+    }
 
     /**
      * Given a coordinate relative to the descendant, find the coordinate in a parent view's

@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2017 The Android Open Source Project
  *
@@ -55,7 +56,9 @@ import android.animation.LayoutTransition.TransitionListener;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
-import android.app.ActivityManagerNative;
+import android.app.ActivityManager;
+import android.app.ActivityManager.MemoryInfo;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.app.IActivityManager;
 import android.content.pm.PackageManager;
 import android.app.ActivityManager.RunningTaskInfo;
@@ -72,6 +75,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
@@ -90,6 +94,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
 
@@ -416,6 +422,10 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     private int mTaskViewStartIndex = 0;
     private OverviewActionsView mActionsView;
 
+    TextView mMemText;
+    private ActivityManager mAm;
+    private int mTotalMem;
+
     private BaseActivity.MultiWindowModeChangedListener mMultiWindowModeChangedListener =
             (inMultiWindowMode) -> {
                 if (mOrientationState != null) {
@@ -477,6 +487,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
 
         // Initialize quickstep specific cache params here, as this is constructed only once
         mActivity.getViewCache().setCacheSize(R.layout.digital_wellbeing_toast, 5);
+        mAm = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
     }
 
     public OverScroller getScroller() {
@@ -555,6 +566,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         mClearAllButton.setOnClickListener(this::dismissAllTasks);
         mKillAppButton = (Button) mActionsView.findViewById(R.id.kill_app);
         mKillAppButton.setOnClickListener(this::killTask);
+        mMemText = (TextView) mActionsView.findViewById(R.id.recents_memory_text);
     }
 
     @Override
@@ -1843,6 +1855,28 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         updatePageOffsets();
         setImportantForAccessibility(isModal() ? IMPORTANT_FOR_ACCESSIBILITY_NO
                 : IMPORTANT_FOR_ACCESSIBILITY_AUTO);
+        showMemDisplay();
+    }
+
+    private boolean showMemDisplay() {
+        if (!Utilities.recentsShowMemory(getContext())) {
+            mMemText.setVisibility(View.GONE);
+            return false;
+        }
+        mMemText.setVisibility(View.VISIBLE);
+
+        updateMemoryStatus();
+        return true;
+    }
+
+    private void updateMemoryStatus() {
+        if (mMemText.getVisibility() == View.GONE) return;
+
+        MemoryInfo memInfo = new MemoryInfo();
+        mAm.getMemoryInfo(memInfo);
+        int available = (int)(memInfo.availMem / 1048576L);
+        int max = (int)(memInfo.totalMem / 1048576L);
+        mMemText.setText("Free RAM: " + String.valueOf(available) + "MB");
     }
 
     private void updatePageOffsets() {

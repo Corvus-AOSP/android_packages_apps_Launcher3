@@ -87,6 +87,13 @@
         settings:units="%"
         android:defaultValue="100" />
 
+    <SwitchPreference
+        android:key="pref_recents_show_memory"
+        android:defaultValue="true"
+        android:persistent="true"
+        android:summary="@string/pref_recents_show_memory_summary"
+        android:title="@string/pref_recents_show_memory_title"/>
+
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
