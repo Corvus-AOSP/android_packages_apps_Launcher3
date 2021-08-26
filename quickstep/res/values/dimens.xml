@@ -39,7 +39,7 @@
     <item name="overview_max_scale" format="float" type="dimen">0.7</item>
 
     <!-- Overrideable in overlay that provides the Overview Actions. -->
-    <dimen name="overview_actions_height">48dp</dimen>
+    <dimen name="overview_actions_height">60dp</dimen>
     <dimen name="overview_actions_button_spacing">32dp</dimen>
     <dimen name="overview_actions_button_spacing_grid">36dp</dimen>
     <dimen name="overview_actions_margin_gesture">28dp</dimen>
