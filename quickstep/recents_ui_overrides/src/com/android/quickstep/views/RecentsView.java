@@ -56,12 +56,12 @@ import android.animation.LayoutTransition.TransitionListener;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
+import android.app.ActivityManagerNative;
 import android.app.ActivityManager;
 import android.app.ActivityManager.MemoryInfo;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.app.IActivityManager;
 import android.content.pm.PackageManager;
-import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -93,6 +93,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.Interpolator;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ProgressBar;
@@ -278,8 +279,8 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     private final float mFastFlingVelocity;
     private final RecentsModel mModel;
     private final int mTaskTopMargin;
-    private Button mClearAllButton;
-    private Button mKillAppButton;
+    private ImageButton mClearAllButton;
+    private ImageButton mKillAppButton;
     private final Rect mTaskViewDeadZoneRect = new Rect();
 
     private final ScrollState mScrollState = new ScrollState();
@@ -562,9 +563,9 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     public void init(OverviewActionsView actionsView) {
         mActionsView = actionsView;
         mActionsView.updateHiddenFlags(HIDDEN_NO_TASKS, getTaskViewCount() == 0);
-        mClearAllButton = (Button) mActionsView.findViewById(R.id.clear_all);
+        mClearAllButton = (ImageButton) mActionsView.findViewById(R.id.clear_all);
         mClearAllButton.setOnClickListener(this::dismissAllTasks);
-        mKillAppButton = (Button) mActionsView.findViewById(R.id.kill_app);
+        mKillAppButton = (ImageButton) mActionsView.findViewById(R.id.kill_app);
         mKillAppButton.setOnClickListener(this::killTask);
         mMemText = (TextView) mActionsView.findViewById(R.id.recents_memory_text);
     }
