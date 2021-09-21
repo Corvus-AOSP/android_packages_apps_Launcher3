@@ -424,6 +424,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     private OverviewActionsView mActionsView;
 
     TextView mMemText;
+    ProgressBar mMemProgress;
     private ActivityManager mAm;
     private int mTotalMem;
 
@@ -568,6 +569,7 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         mKillAppButton = (ImageButton) mActionsView.findViewById(R.id.kill_app);
         mKillAppButton.setOnClickListener(this::killTask);
         mMemText = (TextView) mActionsView.findViewById(R.id.recents_memory_text);
+        mMemProgress = (ProgressBar) mActionsView.findViewById(R.id.recents_memory_bar);
     }
 
     @Override
@@ -1862,22 +1864,27 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
     private boolean showMemDisplay() {
         if (!Utilities.recentsShowMemory(getContext())) {
             mMemText.setVisibility(View.GONE);
+            mMemProgress.setVisibility(View.GONE);
             return false;
         }
         mMemText.setVisibility(View.VISIBLE);
+        mMemProgress.setVisibility(View.VISIBLE);
 
         updateMemoryStatus();
         return true;
     }
 
     private void updateMemoryStatus() {
-        if (mMemText.getVisibility() == View.GONE) return;
+        if (mMemText.getVisibility() == View.GONE || mMemProgress.getVisibility() == View.GONE)
+        return;
 
         MemoryInfo memInfo = new MemoryInfo();
         mAm.getMemoryInfo(memInfo);
         int available = (int)(memInfo.availMem / 1048576L);
         int max = (int)(memInfo.totalMem / 1048576L);
-        mMemText.setText("Free RAM: " + String.valueOf(available) + "MB");
+        mMemText.setText("Free RAM: " + String.valueOf(available) + "MB" + "/" + String.valueOf(max) + "MB");
+        mMemProgress.setMax(max);
+        mMemProgress.setProgress(available);
     }
 
     private void updatePageOffsets() {
