@@ -175,6 +175,8 @@ public final class Utilities {
     public static final String EXTRA_WALLPAPER_LAUNCH_SOURCE =
             "com.android.wallpaper.LAUNCH_SOURCE";
 
+    public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
+
     public static boolean IS_RUNNING_IN_TEST_HARNESS =
                     ActivityManager.isRunningInTestHarness();
 
@@ -922,7 +924,12 @@ public final class Utilities {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return !prefs.getBoolean(InvariantDeviceProfile.KEY_WORKSPACE_LOCK, false);
     }
-    
+
+    public static boolean isDockBgEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SHOW_HOTSEAT_BG, true);
+    }
+
     public static boolean isDoubleTapGestureEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DT_GESTURE, true);
