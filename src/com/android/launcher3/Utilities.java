@@ -165,6 +165,8 @@ public final class Utilities {
     public static final String KEY_DOCK_SEARCH = "pref_dock_search";
     public static final String SEARCH_PACKAGE = "com.google.android.googlequicksearchbox";
 
+    public static final String SHOW_HOTSEAT_BG = "show_hotseat_bg";
+
     public static boolean IS_RUNNING_IN_TEST_HARNESS =
                     ActivityManager.isRunningInTestHarness();
 
@@ -744,6 +746,11 @@ public final class Utilities {
     public static boolean isQSBEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DOCK_SEARCH, true);
+    }
+
+    public static boolean isDockBgEnabled(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(SHOW_HOTSEAT_BG, true);
     }
 
     public static boolean isNotificationGestureEnabled(Context context) {

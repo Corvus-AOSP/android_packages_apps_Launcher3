@@ -74,4 +74,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <!-- Recents Memory -->
     <string name="pref_recents_show_memory_title">Show Free RAM in recents</string>
     <string name="pref_recents_show_memory_summary">Show available free RAM in recents view</string>
+
+    <!-- Hotseat Background -->
+    <string name="hotseat_bg_title">Show hotseat background</string>
+    <string name="hotseat_bg_summary">Adds a translucent background to the app dock</string>
 </resources>

@@ -124,6 +124,8 @@ public class SettingsActivity extends FragmentActivity
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
         } else  if (Utilities.SHOW_LEFT_TAB_PREFERENCE_KEY.equals(key)) {
                 LauncherAppState.getInstanceNoCreate().setNeedsRestart();
+        } else  if (Utilities.SHOW_HOTSEAT_BG.equals(key)) {
+                LauncherAppState.getInstanceNoCreate().setNeedsRestart();
         }
 
     }

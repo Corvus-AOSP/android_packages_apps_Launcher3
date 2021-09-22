@@ -396,6 +396,7 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
 
         inflateRootView(R.layout.launcher);
         setupViews();
+
         mPopupDataProvider = new PopupDataProvider(this::updateNotificationDots);
         LauncherNotifications.getInstance().addListener(mPopupDataProvider);
 
@@ -1170,6 +1171,8 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         mOverviewPanel = findViewById(R.id.overview_panel);
         mHotseat = findViewById(R.id.hotseat);
         mHotseat.setWorkspace(mWorkspace);
+
+        mHotseat.setBackgroundResource(Utilities.isDockBgEnabled(this) ? R.drawable.bkg_appseat : 0);
 
         // Setup the drag layer
         mDragLayer.setup(mDragController, mWorkspace);

@@ -94,6 +94,13 @@
         android:summary="@string/pref_recents_show_memory_summary"
         android:title="@string/pref_recents_show_memory_title"/>
 
+    <SwitchPreference
+        android:key="show_hotseat_bg"
+        android:title="@string/hotseat_bg_title"
+        android:summary="@string/hotseat_bg_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
     <Preference
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
