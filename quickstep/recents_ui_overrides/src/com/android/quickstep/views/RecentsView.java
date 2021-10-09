@@ -1882,9 +1882,10 @@ public abstract class RecentsView<T extends StatefulActivity> extends PagedView 
         mAm.getMemoryInfo(memInfo);
         int available = (int)(memInfo.availMem / 1048576L);
         int max = (int)(memInfo.totalMem / 1048576L);
+        int used = max - available;
         mMemText.setText("Free RAM: " + String.valueOf(available) + "MB" + "/" + String.valueOf(max) + "MB");
         mMemProgress.setMax(max);
-        mMemProgress.setProgress(available);
+        mMemProgress.setProgress(used);
     }
 
     private void updatePageOffsets() {
