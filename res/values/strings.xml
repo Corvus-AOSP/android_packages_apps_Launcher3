@@ -353,4 +353,6 @@
 
     <!-- Failed action error message: e.g. Failed: Pause -->
     <string name="remote_action_failed">Failed: <xliff:g id="what" example="Pause">%1$s</xliff:g></string>
+
+    <string name="message_info">Use the back gesture and exit this screen in order to apply any changes made.</string>
 </resources>

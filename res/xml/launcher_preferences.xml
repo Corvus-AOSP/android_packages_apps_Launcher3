@@ -18,6 +18,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
+    <Preference
+        android:key="user_message"
+	    android:layout="@layout/top_message"/>
+
     <com.android.launcher3.settings.NotificationDotsPreference
         android:key="pref_icon_badging"
         android:title="@string/notification_dots_title"
