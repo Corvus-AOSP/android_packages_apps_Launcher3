@@ -732,7 +732,7 @@ public final class Utilities {
         if (!LauncherAppState.getInstanceNoCreate().isSearchAppAvailable()) {
             return false;
         }
-        return prefs.getBoolean(KEY_SHOW_SEARCHBAR, true);
+        return prefs.getBoolean(KEY_SHOW_SEARCHBAR, false);
     }
 
      public static boolean showDQSB(Context context, Launcher launcher) {
