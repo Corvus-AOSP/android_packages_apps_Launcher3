@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016 The Android Open Source Project
-
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-
           http://www.apache.org/licenses/LICENSE-2.0
-
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,22 +22,23 @@
         launcher:numFolderColumns="2"
         launcher:numHotseatIcons="2"
         launcher:dbFile="launcher_2_by_2.db"
-        launcher:defaultLayoutId="@xml/default_workspace_2x2" >
+        launcher:defaultLayoutId="@xml/default_workspace_2x2"
+        launcher:deviceCategory="phone|multi_display" >
 
         <display-option
             launcher:name="Super Short Stubby"
             launcher:minWidthDps="200"
             launcher:minHeightDps="200"
-            launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
             launcher:name="Shorter Stubby"
             launcher:minWidthDps="200"
             launcher:minHeightDps="300"
-            launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
@@ -60,16 +58,16 @@
             launcher:name="Super Short Stubby"
             launcher:minWidthDps="255"
             launcher:minHeightDps="300"
-            launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
             launcher:name="Shorter Stubby"
             launcher:minWidthDps="255"
             launcher:minHeightDps="400"
-            launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
@@ -90,7 +88,7 @@
             launcher:minWidthDps="275"
             launcher:minHeightDps="420"
             launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -98,7 +96,7 @@
             launcher:minWidthDps="255"
             launcher:minHeightDps="450"
             launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -106,7 +104,7 @@
             launcher:minWidthDps="296"
             launcher:minHeightDps="491.33"
             launcher:iconImageSize="46"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -114,7 +112,7 @@
             launcher:minWidthDps="359"
             launcher:minHeightDps="567"
             launcher:iconImageSize="50"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -122,7 +120,7 @@
             launcher:minWidthDps="335"
             launcher:minHeightDps="567"
             launcher:iconImageSize="50"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
@@ -143,7 +141,7 @@
             launcher:minWidthDps="406"
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
-            launcher:iconTextSize="14.4"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -151,7 +149,7 @@
             launcher:minWidthDps="406"
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
-            launcher:iconTextSize="14.4"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
         <display-option
@@ -159,7 +157,49 @@
             launcher:minWidthDps="255"
             launcher:minHeightDps="400"
             launcher:iconImageSize="48"
-            launcher:iconTextSize="13.0"
+            launcher:iconTextSize="12.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="5_by_6"
+        launcher:numRows="6"
+        launcher:numColumns="5"
+        launcher:numFolderRows="5"
+        launcher:numFolderColumns="4"
+        launcher:numHotseatIcons="5"
+        launcher:dbFile="launcher_5_by_6.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x6"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="56"
+            launcher:iconTextSize="12.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="5_by_7"
+        launcher:numRows="7"
+        launcher:numColumns="5"
+        launcher:numFolderRows="6"
+        launcher:numFolderColumns="4"
+        launcher:numHotseatIcons="5"
+        launcher:dbFile="launcher_5_by_7.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x7"
+        launcher:deviceCategory="phone|multi_display" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="56"
+            launcher:iconTextSize="12.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
@@ -193,41 +233,41 @@
     </grid-option>
 
     <grid-option
-        launcher:name="5_by_6"
-        launcher:numRows="6"
+        launcher:name="5_by_8"
+        launcher:numRows="8"
         launcher:numColumns="5"
-        launcher:numFolderRows="5"
+        launcher:numFolderRows="6"
         launcher:numFolderColumns="4"
         launcher:numHotseatIcons="5"
-        launcher:dbFile="launcher_5_by_6.db"
-        launcher:defaultLayoutId="@xml/default_workspace_5x6" >
+        launcher:dbFile="launcher_5_by_8.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x8" >
 
         <display-option
             launcher:name="Large Phone"
             launcher:minWidthDps="406"
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
-            launcher:iconTextSize="12.0"
+            launcher:iconTextSize="13.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
 
     <grid-option
-        launcher:name="5_by_7"
-        launcher:numRows="7"
+        launcher:name="5_by_10"
+        launcher:numRows="10"
         launcher:numColumns="5"
         launcher:numFolderRows="6"
         launcher:numFolderColumns="4"
         launcher:numHotseatIcons="5"
-        launcher:dbFile="launcher_5_by_7.db"
-        launcher:defaultLayoutId="@xml/default_workspace_5x7" >
+        launcher:dbFile="launcher_5_by_10.db"
+        launcher:defaultLayoutId="@xml/default_workspace_5x10" >
 
         <display-option
             launcher:name="Large Phone"
             launcher:minWidthDps="406"
             launcher:minHeightDps="694"
             launcher:iconImageSize="56"
-            launcher:iconTextSize="12.0"
+            launcher:iconTextSize="13.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
@@ -240,7 +280,8 @@
         launcher:numFolderColumns="5"
         launcher:numHotseatIcons="6"
         launcher:dbFile="launcher_6_by_6.db"
-        launcher:defaultLayoutId="@xml/default_workspace_6x6" >
+        launcher:defaultLayoutId="@xml/default_workspace_6x6"
+        launcher:deviceCategory="phone|multi_display" >
 
         <display-option
             launcher:name="Large Phone"
@@ -248,6 +289,46 @@
             launcher:minHeightDps="694"
             launcher:iconImageSize="48"
             launcher:iconTextSize="12.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="6_by_8"
+        launcher:numRows="8"
+        launcher:numColumns="6"
+        launcher:numFolderRows="5"
+        launcher:numFolderColumns="5"
+        launcher:numHotseatIcons="6"
+        launcher:dbFile="launcher_6_by_8.db"
+        launcher:defaultLayoutId="@xml/default_workspace_6x8" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="13.0"
+            launcher:canBeDefault="true" />
+
+    </grid-option>
+
+    <grid-option
+        launcher:name="6_by_10"
+        launcher:numRows="10"
+        launcher:numColumns="6"
+        launcher:numFolderRows="5"
+        launcher:numFolderColumns="5"
+        launcher:numHotseatIcons="6"
+        launcher:dbFile="launcher_6_by_10.db"
+        launcher:defaultLayoutId="@xml/default_workspace_6x10" >
+
+        <display-option
+            launcher:name="Large Phone"
+            launcher:minWidthDps="406"
+            launcher:minHeightDps="694"
+            launcher:iconImageSize="48"
+            launcher:iconTextSize="13.0"
             launcher:canBeDefault="true" />
 
     </grid-option>
