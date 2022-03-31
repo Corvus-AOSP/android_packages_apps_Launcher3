@@ -250,6 +250,8 @@ import java.util.function.Supplier;
                         TaskbarStashController stashController =
                                 mControllers.taskbarStashController;
                         stashController.updateStateForFlag(FLAG_IN_APP, !isResumed);
+                        // make sure ime bg gets reset
+                        stashController.updateStateForFlag(FLAG_STASHED_IN_APP_IME, false);
                         stashController.applyState(duration);
                     }
                 });
