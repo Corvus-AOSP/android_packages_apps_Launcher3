@@ -199,7 +199,7 @@ public final class Utilities {
     }
 
     public static boolean recentsShowMemory(Context context) {
-         return getPrefs(context).getBoolean("pref_recents_show_memory", true);
+         return getPrefs(context).getBoolean("pref_recents_show_memory", false);
     }
 
     /**
@@ -930,7 +930,7 @@ public final class Utilities {
 
     public static boolean isDockBgEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
-        return prefs.getBoolean(SHOW_HOTSEAT_BG, true);
+        return prefs.getBoolean(SHOW_HOTSEAT_BG, false);
     }
 
     public static boolean isDoubleTapGestureEnabled(Context context) {
