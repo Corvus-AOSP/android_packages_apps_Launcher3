@@ -169,6 +169,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
                 Utilities.restart(this);
         } else if (Utilities.SHOW_HOTSEAT_BG.equals(key)) {
                 Utilities.restart(this);
+        } else if (Utilities.KEY_DRAWER_SEARCHBAR.equals(key)) {
+                Utilities.restart(this);
         }
     }
 

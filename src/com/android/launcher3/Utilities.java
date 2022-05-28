@@ -156,6 +156,7 @@ public final class Utilities {
     public static final String LENS_URI = "google://lens";
     public static final String KEY_DOCK_SEARCH = "pref_dock_search";
     public static final String KEY_DOCK_THEME = "pref_dock_theme";
+    public static final String KEY_DRAWER_SEARCHBAR = "pref_drawer_searchbar";
 
     /**
      * Returns true if theme is dark.
@@ -954,5 +955,10 @@ public final class Utilities {
     public static boolean isThemedIconsEnabled(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(KEY_DOCK_THEME, false);
+    }
+
+    public static boolean showSearchBar(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(KEY_DRAWER_SEARCHBAR, true);
     }
 }

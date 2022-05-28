@@ -62,4 +62,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <string name="trust_apps_help">Help</string>
     <string name="trust_apps_info_hidden">Hidden apps and their widgets are hidden from the drawer</string>
     <string name="open_app_message">Click on the app icon to open them directly from here</string>
+
+    <!-- App drawer searchbar -->
+    <string name="drawer_searchbar_title">Toggle app drawer searchbar</string>
 </resources>

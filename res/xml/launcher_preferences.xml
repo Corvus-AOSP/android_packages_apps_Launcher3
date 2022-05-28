@@ -153,6 +153,11 @@
         android:defaultValue="true"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="pref_drawer_searchbar"
+        android:title="@string/drawer_searchbar_title"
+        android:defaultValue="true" />
+
     <com.android.launcher3.settings.preferences.CustomSeekBarPreference
         android:key="pref_custom_icon_size"
         android:title="@string/icon_size_title"
