@@ -301,6 +301,7 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             case KEY_FONT_SIZE:
             case KEY_ALLAPPS_THEMED_ICONS:
             case DeviceProfile.KEY_PHONE_OVERVIEW_GRID:
+            case DeviceProfile.KEY_ROW_HEIGHT:
                 onConfigChanged(mContext);
                 break;
             case DeviceProfile.KEY_PHONE_TASKBAR:

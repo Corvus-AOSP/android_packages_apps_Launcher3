@@ -201,6 +201,15 @@
         settings:units="%"
         android:defaultValue="80" />
 
+    <com.android.launcher3.settings.preferences.CustomSeekBarPreference
+        android:key="pref_row_height"
+        android:title="@string/row_height_title"
+        android:persistent="true"
+        android:max="150"
+        android:min="75"
+        settings:units="%"
+        android:defaultValue="100" />
+
     <!-- <Preference
         android:key="pref_developer_options"
         android:persistent="false"
