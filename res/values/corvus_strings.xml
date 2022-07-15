@@ -65,4 +65,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- App drawer searchbar -->
     <string name="drawer_searchbar_title">Toggle app drawer searchbar</string>
+
+    <!-- Background opacity -->
+    <string name="app_drawer_opacity">App drawer opacity</string>
+    <string name="recents_opacity">Recents opacity</string>
 </resources>

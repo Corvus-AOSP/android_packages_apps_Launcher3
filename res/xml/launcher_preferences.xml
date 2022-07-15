@@ -176,6 +176,24 @@
         settings:units="%"
         android:defaultValue="100" />
 
+    <com.android.launcher3.settings.preferences.CustomSeekBarPreference
+        android:key="app_drawer_opacity"
+        android:title="@string/background_opacity_title"
+        android:persistent="true"
+        android:max="100"
+        android:min="0"
+        settings:units="%"
+        android:defaultValue="80" />
+
+    <com.android.launcher3.settings.preferences.CustomSeekBarPreference
+        android:key="recents_opacity"
+        android:title="@string/background_opacity_title"
+        android:persistent="true"
+        android:max="100"
+        android:min="0"
+        settings:units="%"
+        android:defaultValue="80" />
+
     <!-- <Preference
         android:key="pref_developer_options"
         android:persistent="false"
