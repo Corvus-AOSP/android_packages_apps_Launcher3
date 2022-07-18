@@ -125,6 +125,7 @@
         android:gravity="center"
         android:drawableStart="@drawable/ic_memory"
         android:drawablePadding="2dp"
+        android:drawableTint="?android:attr/colorControlNormal"
         android:textSize="12sp"
         android:maxLines="1"
         android:textColor="?android:attr/colorControlNormal" />
