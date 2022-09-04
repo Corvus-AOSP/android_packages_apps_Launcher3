@@ -15,8 +15,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start|center"
+        android:padding="8dp"
         android:layout_marginStart="@dimen/qsb_g_icon_marginStart"
-        android:src="@drawable/ic_super_g_color" />
+        android:src="@drawable/ic_super_g_color"
+        android:background="@drawable/gicon_background" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/qsb_text"
+        android:layout_gravity="center"
+        android:textFontWeight="500"
+        android:alpha="0.5"
+        android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"

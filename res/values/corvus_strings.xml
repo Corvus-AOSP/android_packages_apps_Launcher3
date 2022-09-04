@@ -103,4 +103,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <!-- Row Height -->
     <string name="row_height_title">Row height</string>
+    
+    <!-- Qsb text -->
+    <string name="qsb_text">Google</string>
 </resources>
