@@ -106,4 +106,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     <!-- Qsb text -->
     <string name="qsb_text">Google</string>
+
+    <!-- Simple at-a-glance -->
+    <string name="show_google_glance_title">Simple glance mode</string>
+    <string name="show_google_glance_summary">Emulates the look of At-A-glance from pixel launcher</string>
 </resources>

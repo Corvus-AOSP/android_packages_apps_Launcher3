@@ -88,14 +88,25 @@ public class QuickSpaceView extends FrameLayout implements AnimatorUpdateListene
         mEventTitleSub.setText(mQEController.getActionTitle());
         mEventTitleSub.setEllipsize(TruncateAt.MARQUEE);
         mEventTitleSub.setSelected(true);
-        mEventTitleSub.setOnClickListener(mQEController.getAction());
         mEventSubIcon.setImageTintList(mColorStateList);
         mEventSubIcon.setImageResource(mQEController.getActionIcon());
-        bindClock(false);
+        simpleQuickSpace();
+        bindClock(true);
+    }
+
+    private final void simpleQuickSpace() {
+        if(Utilities.pixelGlanceMode(getContext())) {
+           mEventTitle.setVisibility(View.GONE);
+           mEventTitleSub.setVisibility(View.GONE);
+           mEventSubIcon.setVisibility(View.GONE);
+        } else {
+           mEventTitle.setVisibility(View.VISIBLE);
+           mEventTitleSub.setVisibility(View.VISIBLE);
+           mEventSubIcon.setVisibility(View.VISIBLE);
+        }
     }
 
     private final void bindClock(boolean forced) {
-        mClockView.setVisibility(View.VISIBLE);
         mClockView.setOnClickListener(mActionReceiver.getCalendarAction());
         if (forced) {
             mClockView.reloadDateFormat(true);

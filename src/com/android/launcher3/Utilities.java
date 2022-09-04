@@ -163,6 +163,7 @@ public final class Utilities {
     public static final String KEY_RECENTS_OPACITY = "pref_recents_opacity";
     public static final String KEY_APP_DRAWER_OPACITY = "pref_app_drawer_opacity";
     public static final String DESKTOP_SHOW_QUICKSPACE = "pref_show_quickspace";
+    public static final String PIXEL_GLANCE_MODE = "pref_pixel_glance";
 
     /**
      * Returns true if theme is dark.
@@ -998,5 +999,10 @@ public final class Utilities {
     public static boolean showQuickspace(Context context) {
         SharedPreferences prefs = getPrefs(context.getApplicationContext());
         return prefs.getBoolean(DESKTOP_SHOW_QUICKSPACE, true);
+    }
+
+    public static boolean pixelGlanceMode(Context context) {
+        SharedPreferences prefs = getPrefs(context.getApplicationContext());
+        return prefs.getBoolean(PIXEL_GLANCE_MODE, false);
     }
 }
