@@ -40,7 +40,6 @@ public class QuickEventsController {
 
     private String mEventTitle;
     private String mEventTitleSub;
-    private OnClickListener mEventTitleSubAction = null;
     private int mEventSubIcon;
 
     private boolean mRunning;
@@ -84,31 +83,10 @@ public class QuickEventsController {
     public void updateQuickEvents() {
         if (!mRunning) return;
 
-        mEventTitleSubAction = new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_HOME);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED);
-                try {
-                    Launcher.getLauncher(mContext).startActivitySafely(view, intent, null);
-                } catch (ActivityNotFoundException ex) {
-                }
-            }
-        };
-
         int psaLength;
         mQuotes = mContext.getResources().getStringArray(R.array.quickspace_psa_random);
         psaLength = mQuotes.length - 1;
         mEventTitleSub = mQuotes[getLuckyNumber(0, psaLength)];
-
-        // Clean the onClick event to avoid any weird behavior
-        mEventTitleSubAction = new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // haha yes
-            }
-        };
 
         switch (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)) {
             case 5: case 6: case 7: case 8: case 9: case 10: case 11:
@@ -138,7 +116,7 @@ public class QuickEventsController {
 
             default:
                 break;
-      }
+        }
    }
 
     public String getTitle() {
@@ -147,10 +125,6 @@ public class QuickEventsController {
 
     public String getActionTitle() {
         return mEventTitleSub;
-    }
-
-    public OnClickListener getAction() {
-        return mEventTitleSubAction;
     }
 
     public int getActionIcon() {
