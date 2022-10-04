@@ -151,18 +151,6 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (Utilities.KEY_DT_GESTURE.equals(key)) {
                 Utilities.restart(this);
-        } else if (Utilities.KEY_DOCK_SEARCH.equals(key)) {
-                Utilities.restart(this);
-        } else if (Utilities.KEY_DOCK_THEME.equals(key)) {
-                Utilities.restart(this);
-        } else if (Utilities.SHOW_HOTSEAT_BG.equals(key)) {
-                Utilities.restart(this);
-        } else if (Utilities.KEY_DRAWER_SEARCHBAR.equals(key)) {
-                Utilities.restart(this);
-        } else if (Utilities.DESKTOP_SHOW_QUICKSPACE.equals(key)) {
-                Utilities.restart(this);
-        } else if (Utilities.PIXEL_GLANCE_MODE.equals(key)) {
-                Utilities.restart(this);
         }
     }
 
@@ -210,8 +198,7 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     /**
      * This fragment shows the launcher preferences.
      */
-    public static class LauncherSettingsFragment extends PreferenceFragmentCompat implements
-            SharedPreferences.OnSharedPreferenceChangeListener {
+    public static class LauncherSettingsFragment extends PreferenceFragmentCompat {
 
         private String mHighLightKey;
         private boolean mPreferenceHighlighted = false;

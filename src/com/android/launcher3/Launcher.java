@@ -140,6 +140,7 @@ import com.android.launcher3.folder.FolderIcon;
 import com.android.launcher3.icons.BitmapRenderer;
 import com.android.launcher3.icons.IconCache;
 import com.android.launcher3.keyboard.ViewGroupFocusHelper;
+import com.android.launcher3.lineage.icon.IconPackStore;
 import com.android.launcher3.lineage.LineageUtils;
 import com.android.launcher3.logger.LauncherAtom;
 import com.android.launcher3.logging.FileLog;
@@ -232,7 +233,7 @@ import java.util.stream.Stream;
  */
 public class Launcher extends StatefulActivity<LauncherState> implements LauncherExterns,
         Callbacks, InvariantDeviceProfile.OnIDPChangeListener, PluginListener<OverlayPlugin>,
-        LauncherOverlayCallbacks {
+        LauncherOverlayCallbacks, SharedPreferences.OnSharedPreferenceChangeListener{
     public static final String TAG = "Launcher";
 
     public static final ActivityTracker<Launcher> ACTIVITY_TRACKER = new ActivityTracker<>();
@@ -523,6 +524,8 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         getSystemUiController().updateUiState(SystemUiController.UI_STATE_BASE_WINDOW,
                 Themes.getAttrBoolean(this, R.attr.isWorkspaceDarkText));
 
+        mSharedPrefs.registerOnSharedPreferenceChangeListener(this);
+
         if (mLauncherCallbacks != null) {
             mLauncherCallbacks.onCreate(savedInstanceState);
         }
@@ -551,6 +554,23 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
 
     public OnboardingPrefs getOnboardingPrefs() {
         return mOnboardingPrefs;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
+        switch (key) {
+            case Utilities.DESKTOP_SHOW_QUICKSPACE:
+            case Utilities.KEY_DOCK_SEARCH:
+            case Utilities.KEY_DOCK_THEME:
+            case Utilities.SHOW_HOTSEAT_BG:
+            case Utilities.KEY_DRAWER_SEARCHBAR:
+            case Utilities.PIXEL_GLANCE_MODE:
+            case IconPackStore.KEY_ICON_PACK:
+                recreate();
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
