@@ -42,8 +42,8 @@ public class QuickEventsController {
     private String mEventTitleSub;
     private int mEventSubIcon;
 
-    private boolean mRunning;
-    private boolean mRegistered;
+    private boolean mRunning = true;
+    private boolean mRegistered = false;
 
     // Quotes
     private String[] mQuotes;
@@ -60,14 +60,13 @@ public class QuickEventsController {
     }
 
     public void initQuickEvents() {
-        mRunning = true;
         registerPSAListener();
-        mRegistered = true;
         updateQuickEvents();
     }
 
     private void registerPSAListener() {
         if (mRegistered) return;
+        mRegistered = true;
         IntentFilter psonalityIntent = new IntentFilter();
         psonalityIntent.addAction(Intent.ACTION_TIME_TICK);
         psonalityIntent.addAction(Intent.ACTION_TIME_CHANGED);
@@ -77,6 +76,7 @@ public class QuickEventsController {
 
     private void unregisterPSAListener() {
         if (!mRegistered) return;
+        mRegistered = false;
         mContext.unregisterReceiver(mPSAListener);
     }
 
@@ -143,10 +143,10 @@ public class QuickEventsController {
     public void onPause() {
         mRunning = false;
         unregisterPSAListener();
-        mRegistered = false;
     }
 
     public void onResume() {
-    	initQuickEvents();
+        mRunning = true;
+        registerPSAListener();
     }
 }
