@@ -151,6 +151,8 @@ public class SettingsActivity extends CollapsingToolbarBaseActivity
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (Utilities.KEY_DT_GESTURE.equals(key)) {
                 Utilities.restart(this);
+        } else if (Utilities.KEY_DOCK_SEARCH.equals(key)) {
+                Utilities.restart(this);
         }
     }
 

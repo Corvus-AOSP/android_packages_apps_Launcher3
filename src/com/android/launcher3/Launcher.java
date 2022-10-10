@@ -560,7 +560,6 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
     public void onSharedPreferenceChanged(SharedPreferences SharedPrefs, String key) {
         switch (key) {
             case Utilities.DESKTOP_SHOW_QUICKSPACE:
-            case Utilities.KEY_DOCK_SEARCH:
             case Utilities.KEY_DOCK_THEME:
             case Utilities.SHOW_HOTSEAT_BG:
             case Utilities.KEY_DRAWER_SEARCHBAR:
